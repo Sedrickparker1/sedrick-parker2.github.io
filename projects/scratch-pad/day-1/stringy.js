@@ -14,8 +14,9 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-let answer = string.length
-return  answer;
+    for (var i = string.length; i > 0; i++){
+        return  i;
+    }
     // YOUR CODE ABOVE HERE //
 }
 // let length = string => string.length;
@@ -26,18 +27,19 @@ return  answer;
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-let answer = string.toLowerCase();
-return answer;
+let lowerCase = string.toLowerCase();
+return lowerCase;
     // YOUR CODE ABOVE HERE //
 }
-// let lowerYourTone = string => string.toLowerCase();
+let lowerYourTone = string => string.toLowerCase();
 
 /**
  * Given an input String, return a new String forced to uppercase.
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-    return string.toUpperCase();
+    let upperCase = string.toUpperCase();
+    return upperCase;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -57,6 +59,11 @@ function toUpperCase(string) {
  */
 
     // YOUR CODE BELOW HERE //
+
+    function toDashCase(string){
+        let message = string.replaceAll(' ', '-').toLowerCase();
+        return message;
+    }
     let toDashCase = string => string.replaceAll(' ', '-').toLowerCase();
 
     // a little smaller than before..
