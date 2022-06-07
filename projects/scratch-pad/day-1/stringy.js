@@ -14,10 +14,11 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-return string.length;
+let answer = string.length
+return  answer;
     // YOUR CODE ABOVE HERE //
 }
-let length = string => string.length;
+// let length = string => string.length;
 // a little refractor...
 
 /**
@@ -25,10 +26,11 @@ let length = string => string.length;
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-return string.toLowerCase();
+let answer = string.toLowerCase();
+return answer;
     // YOUR CODE ABOVE HERE //
 }
-let lowerYourTone = string => string.toLowerCase();
+// let lowerYourTone = string => string.toLowerCase();
 
 /**
  * Given an input String, return a new String forced to uppercase.
