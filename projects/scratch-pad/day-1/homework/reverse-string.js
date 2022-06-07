@@ -18,6 +18,7 @@
  *  c. how do you access individual characters of a String?
  *  d. how do you concatenate Strings? What operator do we use?
  */
+ let reverse = input => input.split('').reverse().join('');
 
 function reverseString(input) {
   // YOUR CODE GOES BELOW HERE //
@@ -26,6 +27,8 @@ function reverseString(input) {
   return message;
   // YOUR CODE GOES ABOVE HERE //
 }
+
+
 
 
 // the Long way ~~

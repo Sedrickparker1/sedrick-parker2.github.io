@@ -25,11 +25,10 @@ let length = string => string.length;
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-
 return string.toLowerCase();
-
     // YOUR CODE ABOVE HERE //
 }
+let lowerYourTone = string => string.toLowerCase();
 
 /**
  * Given an input String, return a new String forced to uppercase.
@@ -54,13 +53,14 @@ function toUpperCase(string) {
  *
  *      See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Using_global_and_ignore_with_replace()
  */
-function toDashCase(string) {
-    // YOUR CODE BELOW HERE //
 
+    // YOUR CODE BELOW HERE //
+    let toDashCase = string => string.replaceAll(' ', '-').toLowerCase();
+
+    // a little smaller than before..
 
 
     // YOUR CODE ABOVE HERE //
-}
 
 /**
  * Given an input String and a single character, return true if the String
@@ -74,13 +74,35 @@ function toDashCase(string) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
-function beginsWith(string, char) {
+ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-    
-
-    // YOUR CODE ABOVE HERE //
+    let valid = true;
+//   validator.
+    for (var i = 0; i < string.length-1; i++){
+    let first = string[0];
+//   if first is equal to char return true false otherwise..case insens.!..
+    if(first == char.toLowerCase() || char.toUpperCase()){
+      return valid;
+    }
+      return !valid;
+  }
 }
+
+function beginsWith2(string, char) {
+    // YOUR CODE BELOW HERE //
+    let valid = true;
+//   validator.
+    for (var i = 0; i < string.length-1; i++){
+    var first = string[0];
+//   if first is equal to char return true false otherwise..case insens.!..
+     let tester = first == char.toLowerCase() || first == char.toUpperCase() ? valid : !valid;
+      return tester;
+    //   a little simpler..:)
+  }
+}
+
+
+
 
 /**
  * Given an input String and a single character, return true if the String
@@ -94,13 +116,20 @@ function beginsWith(string, char) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
-function endsWith(string, char) {
+
+ function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
-
+  for(let i = string.length-1; i >= 0 ; i++){
+    let lastLetter =  string[i];
+    if(lastLetter == char.toLowerCase() || lastLetter == char.toUpperCase()){
+      return true;
+    }
+  }
     // YOUR CODE ABOVE HERE //
+    // 
+  return false;
 }
+
 
 /**
  * Given two input Strings, return the Strings concatenated into one.
@@ -109,9 +138,7 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
-
+    return stringOne.concat(stringTwo);
     // YOUR CODE ABOVE HERE //
 }
 
@@ -142,13 +169,22 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
-function longest(stringOne, stringTwo) {
+
+ function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
-
-    // YOUR CODE ABOVE HERE //
+let winner ;
+// we have to have a winner of course...
+const firstNum = stringOne.length;
+// this is what we need , now we have the length values;
+const secondNum = stringTwo.length;
+// Now all we need is to compare
+if (firstNum > secondNum){
+  winner = stringOne;
 }
+  winner = stringTwo;
+    return winner;
+ }  
+   
 
 /**
  * Given two Strings, return 1 if the first is higher in alphabetical order than
