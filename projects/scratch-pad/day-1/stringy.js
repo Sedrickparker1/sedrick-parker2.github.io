@@ -14,11 +14,11 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-    for (var i = string.length; i > 0; i++){
-        return  i;
-    }
-    // YOUR CODE ABOVE HERE //
+    return string.length;
+    //     // YOUR CODE ABOVE HERE //
 }
+
+
 // let length = string => string.length;
 // a little refractor...
 
@@ -27,11 +27,11 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-let lowerCase = string.toLowerCase();
-return lowerCase;
+    let lowerCase = string.toLowerCase();
+    return lowerCase;
     // YOUR CODE ABOVE HERE //
 }
-let lowerYourTone = string => string.toLowerCase();
+// let lowerYourTone = string => string.toLowerCase();
 
 /**
  * Given an input String, return a new String forced to uppercase.
@@ -42,6 +42,8 @@ function toUpperCase(string) {
     return upperCase;
     // YOUR CODE ABOVE HERE //
 }
+
+// let MakeUpperCase = string => string.toUpperCase();
 
 /**
  * Given an input String, return a new String forced to dash-case.
@@ -58,16 +60,16 @@ function toUpperCase(string) {
  *      See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Using_global_and_ignore_with_replace()
  */
 
-    // YOUR CODE BELOW HERE //
+// YOUR CODE BELOW HERE //
 
-    function toDashCase(string){
-        let message = string.replaceAll(' ', '-').toLowerCase();
-        return message;
-    }
-    let toDashCase = string => string.replaceAll(' ', '-').toLowerCase();
+function toDashCase(string) {
+    let message = string.replaceAll(' ', '-').toLowerCase();
+    return message;
+}
+// let toDashCase = string => string.replaceAll(' ', '-').toLowerCase();
 
-    // a little smaller than before..
-    // YOUR CODE ABOVE HERE //
+// a little smaller than before..
+// YOUR CODE ABOVE HERE //
 
 /**
  * Given an input String and a single character, return true if the String
@@ -81,32 +83,20 @@ function toUpperCase(string) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
- function beginsWith(string, char) {
+function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
     let valid = true;
-//   validator.
-    for (var i = 0; i < string.length-1; i++){
-    let first = string[0];
-//   if first is equal to char return true false otherwise..case insens.!..
-    if(first == char.toLowerCase() || first == char.toUpperCase()){
-      return valid;
+    //   validator.
+    for (var i = 0; i < string.length - 1; i++) {
+        let first = string[0];
+        //   if first is equal to char return true false otherwise..case insens.!..
+        if (first == char.toLowerCase() || first == char.toUpperCase()) {
+            return valid;
+        }
+        return !valid;
     }
-      return !valid;
-  }
 }
 
-function beginsWith2(string, char) {
-    // YOUR CODE BELOW HERE //
-    let valid = true;
-//   validator.
-    for (var i = 0; i < string.length-1; i++){
-    var first = string[0];
-//   if first is equal to char return true false otherwise..case insens.!..
-     let tester = first == char.toLowerCase() || first == char.toUpperCase() ? valid : !valid;
-      return tester;
-    //   a little simpler..:)
-  }
-}
 
 
 
@@ -124,17 +114,13 @@ function beginsWith2(string, char) {
  *      ensure uppercase and lowercase can be compared equally?
  */
 
- function endsWith(string, char) {
+function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-  for(let i = string.length-1; i >= 0 ; i++){
-    let lastLetter =  string[i];
-    if(lastLetter == char.toLowerCase() || lastLetter == char.toUpperCase()){
-      return true;
-    }
-  }
+    // turn the string into an array...
+    let lastLetter = string.slice(-1);
+    return lastLetter.toUpperCase() == char.toUpperCase();
     // YOUR CODE ABOVE HERE //
     // 
-  return false;
 }
 
 
@@ -162,8 +148,12 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
-
+    var output = '';
+    for (let i = 0; i < args.length; i++) {
+        output += args[i];
+    }
+    //   return string with data concated..
+    return output;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -177,21 +167,12 @@ function join(stringOne, stringTwo) {
  * TIP: What property of the String do we need to compare?
  */
 
- function longest(stringOne, stringTwo) {
+function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-let winner ;
-// we have to have a winner of course...
-const firstNum = stringOne.length;
-// this is what we need , now we have the length values;
-const secondNum = stringTwo.length;
-// Now all we need is to compare
-if (firstNum > secondNum){
-  winner = stringOne;
+    return stringOne.length > stringTwo.length ? stringOne : stringTwo;
+
 }
-  winner = stringTwo;
-    return winner;
- }  
-   
+
 
 /**
  * Given two Strings, return 1 if the first is higher in alphabetical order than
@@ -202,9 +183,13 @@ if (firstNum > secondNum){
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
-
+    if (stringOne < stringTwo) {
+        return 1;
+    }
+    else if (stringOne > stringTwo) {
+        return -1;
+    }
+    return 0;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -218,16 +203,22 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
-
-
+    if (stringOne > stringTwo) {
+        return 1;
+    }
+    else if (stringOne < stringTwo) {
+        return -1;
+    }
+    return 0;
     // YOUR CODE ABOVE HERE //
 }
 
+    // YOUR CODE ABOVE HERE //
+
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
+if ((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.length = length;
