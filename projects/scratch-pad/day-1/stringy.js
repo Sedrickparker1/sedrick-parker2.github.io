@@ -58,8 +58,6 @@ function toUpperCase(string) {
     let toDashCase = string => string.replaceAll(' ', '-').toLowerCase();
 
     // a little smaller than before..
-
-
     // YOUR CODE ABOVE HERE //
 
 /**
@@ -81,7 +79,7 @@ function toUpperCase(string) {
     for (var i = 0; i < string.length-1; i++){
     let first = string[0];
 //   if first is equal to char return true false otherwise..case insens.!..
-    if(first == char.toLowerCase() || char.toUpperCase()){
+    if(first == char.toLowerCase() || first == char.toUpperCase()){
       return valid;
     }
       return !valid;

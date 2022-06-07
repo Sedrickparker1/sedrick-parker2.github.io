@@ -30,7 +30,6 @@ function reverseString(input) {
 
 
 
-
 // the Long way ~~
 
 function reverseThatAgain(input) {
