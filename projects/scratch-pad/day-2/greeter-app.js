@@ -8,18 +8,7 @@
  * Using if, else-if and else, AND depending on the hour of the day, 
  * write a greeting program that prints a greeting to the screen like so: 
  *
- * // hour is 0-11
- * Good Morning!
- *
- * // hour is 12-16
- * Good Afternoon! 
- *
- * // hour is 17-21
- * Good Evening!
- *
- * // hour is 22-24 
- * Good Night!
- *
+ 
  * TIPS: 
  * 
  *   a. At what threshold does morning become afternoon? What comparison 
@@ -32,15 +21,34 @@
  *   c. The tests are CASE sensitive, so you MUST console.log('Good Night!') with
  *      the exact case.
  */
+//  *
+//  * // hour is 12-16
+//  * Good Afternoon! 
+//  * // hour is 17-21
+//  * Good Evening!
+//  *
+//  * // hour is 22-24 
+//  * Good Night!
+//  *
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
+        if(hour <= 11){
+            console.log('Good Morning!');
+        }
+        else if(hour <= 16){
+            console.log('Good Afternoon!');
+        }
+        else if(hour <= 21){
+            console.log('Good Evening!');
+        }else if (hour >= 22){
+            console.log('Good Night!');
+        }
+        // YOUR CODE ABOVE HERE //
+    }
+   
     
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
-}
+
 
 /*
  * To test our greeter when developing, we need to fake some input data, ie, 
@@ -52,13 +60,12 @@ function greeter(hour) {
  * var today = new Date();
  * var hour = today.getHours();
  */
-
 greeter(11);
 
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
+if ((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.greeter = greeter;
