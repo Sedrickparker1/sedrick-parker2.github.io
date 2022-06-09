@@ -12,12 +12,11 @@
  * TIP: In JavaScript, how can we decipher if a value is an Array? Can typeof
  * work?
  */
+
+
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return Array.isArray(value);
     // YOUR CODE ABOVE HERE //
 }
 
@@ -29,13 +28,11 @@ function isArray(value) {
  * null, not an Array, not a Date - all of these will return 'object' if used 
  * with typeof.
  */
-function isObject(value) {
+function isObject(value){
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    return typeof value  === 'object' && !Array.isArray(value) && value !== null;
+    // if the value type equals object and it is not and array and  dosent equal null.....
+   // YOUR CODE ABOVE HERE //
 }
 
 /** 
@@ -46,9 +43,6 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -74,10 +68,7 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return typeof value;
     // YOUR CODE ABOVE HERE //
 }
 

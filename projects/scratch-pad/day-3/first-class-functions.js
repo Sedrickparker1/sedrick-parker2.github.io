@@ -13,10 +13,9 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return function (num) {
+        return num > base;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -27,10 +26,9 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return function (num) {
+        return num < base;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -39,13 +37,11 @@ function createLessThanFilter(base) {
  * Function that tests whether a given String starts with the startsWith 
  * character.
  */
-function createStartsWithFilter(startsWith) {
+function createStartsWithFilter(startsWith){
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    return function (str){
+       return str[0] === startsWith;
+    }
 }
 
 /** 
@@ -55,10 +51,9 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return function(str) {
+        return str.slice(-1) === endsWith;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -71,11 +66,9 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    for(let i = 0; i < strings.length; i++){
+        return modify(strings);
+    }   // YOUR CODE ABOVE HERE //
 }
 
 /** 
@@ -87,17 +80,19 @@ function modifyStrings(strings, modify) {
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
-function allStringsPass(strings, test) {
+function allStringsPass(strings, func) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
     
     // YOUR CODE ABOVE HERE //
 }
 
+
+
+
+
+
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
+if ((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.createGreaterThanFilter = createGreaterThanFilter;
@@ -105,5 +100,5 @@ if((typeof process !== 'undefined') &&
     module.exports.createStartsWithFilter = createStartsWithFilter;
     module.exports.createEndsWithFilter = createEndsWithFilter;
     module.exports.modifyStrings = modifyStrings;
-    module.exports.allStringsPass = allStringsPass;   
+    module.exports.allStringsPass = allStringsPass;
 }

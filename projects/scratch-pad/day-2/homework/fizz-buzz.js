@@ -11,24 +11,24 @@
  *  d. FINALLY, for numbers which are multiples of both three and five print “FizzBuzz”.
 */
 function fizzBuzz() {
-    // YOUR CODE GOES BELOW HERE //
-    // count to 100
-    for (let i = 1 ; i <= 100 ; i ++ ){
-        if(i % 5 === 0 && i % 3 === 0){
-          console.log('FizzBuzz');
+  // YOUR CODE GOES BELOW HERE //
+  // count to 100
+  for (let i = 1; i <= 100; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log('FizzBuzz');
 
-        }else if(i % 5 === 0){
-          console.log('Buzz');
-        }
-        else if (i % 3 === 0){
-        console.log('Fizz');
-      }
-      else{
-        console.log(i);
-      }
+    } else if (i % 5 === 0) {
+      console.log('Buzz');
     }
+    else if (i % 3 === 0) {
+      console.log('Fizz');
+    }
+    else {
+      console.log(i);
+    }
+  }
 
-    // YOUR CODE GOES ABOVE HERE //
+  // YOUR CODE GOES ABOVE HERE //
 }
 
 
@@ -36,8 +36,8 @@ function fizzBuzz() {
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
-    // here, export any references you need for tests //
-    module.exports.fizzBuzz = fizzBuzz
+if ((typeof process !== 'undefined') &&
+  (typeof process.versions.node !== 'undefined')) {
+  // here, export any references you need for tests //
+  module.exports.fizzBuzz = fizzBuzz
 }

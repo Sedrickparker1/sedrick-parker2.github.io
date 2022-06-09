@@ -21,13 +21,23 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
+
 function range(start, end) {
-    // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE GOES ABOVE HERE //
+  // YOUR CODE GOES BELOW HERE //
+  let output = [];
+  //   return output
+  //   while loop to check if the start is greater than the end...
+  if (start > end) {
+    for (let i = start; i >= end; i--) {
+      output.push(i);
+    }
+    return output;
+  } else {
+    for (let i = start; i <= end; i++) {
+      output.push(i);
+    }
+    return output;
+  }
 }
 
 
@@ -35,8 +45,8 @@ function range(start, end) {
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
-    // here, export any references you need for tests //
-    module.exports.range = range;
+if ((typeof process !== 'undefined') &&
+  (typeof process.versions.node !== 'undefined')) {
+  // here, export any references you need for tests //
+  module.exports.range = range;
 }
