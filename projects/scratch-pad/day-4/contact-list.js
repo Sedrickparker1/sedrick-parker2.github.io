@@ -35,21 +35,51 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    let contact = {};
+    contact.id = id;
+    contact.nameFirst = nameFirst;
+    contact.nameLast = nameLast;
 
-} 
+    return contact;
+}
 
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
-    
+    var contacts = [];
+
     return {
         // we implemented the length api for you //
-        length: function() {
+        length: function () {
             return contacts.length;
-        }
+        },
+        addContact: function (contact) {
+            contacts.push(contact);
+        },
+        findContact: function (fullName) {
+            for (var i = 0; i < contacts.length; i++) {
+                var test = fullName === contacts[i].nameFirst + ' ' + contacts[i].nameLast ? contacts[i] : undefined;
+            }
+            return test;
+        },
+        removeContact: function (contact) {
+            // pop method...
+            contacts.pop(contact);
+        },
+        printAllContactNames: function () {
+            let output = [];
+            // we need a output...
+            for (let i = 0; i < contacts.length; i++) {
+                // pushing values into output...
+                output.push(contacts[i].nameFirst + ' ' + contacts[i].nameLast );
+            }
+            return output.join("\n");
+            // this will result in all names in one string joined by the newLine..
+        },
+
+
     }
 }
 
@@ -62,8 +92,8 @@ function makeContactList() {
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-(typeof process.versions.node !== 'undefined')) {
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.makeContact = makeContact;
     module.exports.makeContactList = makeContactList;

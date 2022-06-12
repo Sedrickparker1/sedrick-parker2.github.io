@@ -27,8 +27,9 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     return function (num) {
-        return num < base;
-    }
+       return num < base;
+       
+    };
     // YOUR CODE ABOVE HERE //
 }
 
@@ -37,12 +38,14 @@ function createLessThanFilter(base) {
  * Function that tests whether a given String starts with the startsWith 
  * character.
  */
-function createStartsWithFilter(startsWith){
+
+function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    return function (str){
-       return str[0] === startsWith;
-    }
+    return function(str){
+        return str[0].toUpperCase() === startsWith.toUpperCase();
+    };
 }
+
 
 /** 
  * Given a endsWith character, which will be a single character, return a 
@@ -51,9 +54,9 @@ function createStartsWithFilter(startsWith){
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    return function(str) {
-        return str.slice(-1) === endsWith;
-    }
+    return function (str) {
+        return str.slice(-1).toUpperCase() === endsWith.toUpperCase();
+    };
     // YOUR CODE ABOVE HERE //
 }
 
@@ -66,9 +69,13 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    for(let i = 0; i < strings.length; i++){
-        return modify(strings);
-    }   // YOUR CODE ABOVE HERE //
+    // YOUR CODE BELOW HERE //
+    let output = [];
+    for (let i = 0; i < strings.length; i++) {
+        output.push(modify(strings[i]));
+    }
+    // YOUR CODE ABOVE HERE //
+    return output;
 }
 
 /** 
@@ -82,7 +89,14 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, func) {
     // YOUR CODE BELOW HERE //
-    
+    // YOUR CODE BELOW HERE /
+    let count = 0;
+    for (let i = 0; i < strings.length; i++) {
+        if (func(strings[i]) === true) {
+            count++;
+        }
+    }
+    return count === strings.length;
     // YOUR CODE ABOVE HERE //
 }
 
