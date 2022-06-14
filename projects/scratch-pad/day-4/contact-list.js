@@ -49,38 +49,35 @@ function makeContactList() {
      * You need something here to hold contacts. See length api for a hint:
      */
     var contacts = [];
-
     return {
         // we implemented the length api for you //
-        length: function () {
-            return contacts.length;
+        length: function(){
+         return contacts.length;
         },
         addContact: function (contact) {
             contacts.push(contact);
         },
         findContact: function (fullName) {
-            for (var i = 0; i < contacts.length; i++) {
+            for (var i = 0; i < contacts.length; i ++) {
                 var test = fullName === contacts[i].nameFirst + ' ' + contacts[i].nameLast ? contacts[i] : undefined;
             }
-            return test;
+             return test;
         },
         removeContact: function (contact) {
             // pop method...
             contacts.pop(contact);
         },
-        printAllContactNames: function () {
+        printAllContactNames: function(){
             let output = [];
             // we need a output...
-            for (let i = 0; i < contacts.length; i++) {
+            for (let i = 0; i < contacts.length; i++){
                 // pushing values into output...
-                output.push(contacts[i].nameFirst + ' ' + contacts[i].nameLast );
+                output.push(contacts[i].nameFirst + ' ' + contacts[i].nameLast);
             }
-            return output.join("\n");
+                return output.join("\n");
             // this will result in all names in one string joined by the newLine..
         },
-
-
-    }
+    };
 }
 
 

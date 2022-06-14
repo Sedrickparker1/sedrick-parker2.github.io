@@ -28,7 +28,6 @@ function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     return function (num) {
        return num < base;
-       
     };
     // YOUR CODE ABOVE HERE //
 }
@@ -99,11 +98,6 @@ function allStringsPass(strings, func) {
     return count === strings.length;
     // YOUR CODE ABOVE HERE //
 }
-
-
-
-
-
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if ((typeof process !== 'undefined') &&

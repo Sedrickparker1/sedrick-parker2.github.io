@@ -21,7 +21,6 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
-
 function range(start, end) {
   // YOUR CODE GOES BELOW HERE //
   let output = [];
@@ -39,10 +38,6 @@ function range(start, end) {
     return output;
   }
 }
-
-
-
-
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if ((typeof process !== 'undefined') &&
