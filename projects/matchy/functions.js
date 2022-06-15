@@ -54,7 +54,7 @@ function remove(arr, user) {
 //////////////////////////////////////////////////////////////////////
 
 function add(array, object) {
-    var matchExists = false;
+     var matchExists = false;
     for (var i = 0; i < array.length; i++) {
         if (object.name === array[i].name) {
             matchExists = true;

@@ -10,10 +10,7 @@
  * .Before the advent of ES6, var declarations ruled.  
  * 
  * .var declarations are globally scoped or function/locally scoped.
- * 
- * var is function scoped when it is declared within a function. 
- * This means that it is available and can be accessed only within that function!!
- * 
+ *    EXAMPLE:
  *   var greeter = "hey hi";
     
     Here, we can clearly see that greeter is a global scoped variable.. :-)
@@ -33,6 +30,8 @@
     this can generate alot of bugs in your code and make you CRY..    
     
     :\
+    ////////////////////////////////////////
+
     
     LET :}
 
@@ -51,8 +50,11 @@
      So if you try to use a let variable before declaration,
       you'll get a Reference Error.
  * 
+///////////////////////////////////////////////
+   
 
-    const :|
+
+   const :|
 
     .Variables declared with the CONST maintain constant values
 
