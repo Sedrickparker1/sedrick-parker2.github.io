@@ -46,7 +46,7 @@
     } else {
       has_kix = "i prefer cheerios";
     }
-    assert.equal(has_kix, undefined);
+    assert.equal(has_kix, "i prefer cheerios");
   });
 
   QUnit.test("Functions don't have access to eachothers scope", function(assert){
