@@ -38,25 +38,23 @@ var femaleCount = function (arr) {
     return ladyCount;
 };
 
-
 var oldestCustomer = function (arr) {
-    let output = [];
+    let oldest = 0;
+    let name = '';
+    // start with new oldest variable 
     //  - **Objective**: Find the oldest customer's name
     for (let i = 0; i < arr.length; i++) {
-        output.push(arr[i].age)
+        if (arr[i].age > oldest) {
+            oldest = arr[i].age;
+            name = arr[i].name;
+        }
     }
     //     have all values so, how could i get the age values ?
     // use a method to get the highest age, then check to see whos age matches the number
-    let oldHeadAge = Math.max(...output);
     //   this is going to be the oldest users age now we need to check who
-    for (let s = 0; s < arr.length; s++) {
-        if (arr[s].age === oldHeadAge) {
-            //       if users age matches the age , we are going to return the name of that user
-            return arr[s].name;
-        }
-    }
+    return name;
     //  - **Output**: `String`
-};
+}
 
 var youngestCustomer = function (arr) {
     let output = [];
@@ -80,7 +78,20 @@ var youngestCustomer = function (arr) {
 
 var averageBalance;
 
-var firstLetterCount;
+var firstLetterCount = function (array, letter) {
+    //  - **Objective**: Find how many friends of a given customer have names that start with a given letter
+    let count = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].name.charAt(0) === letter.toUpperCase()) {
+            // if the first name letter is equal to letter 
+            // add 1 to the count variable
+            // return the count variable
+            count += 1
+        };
+
+    }
+    return count;
+};
 
 var friendFirstLetterCount;
 
