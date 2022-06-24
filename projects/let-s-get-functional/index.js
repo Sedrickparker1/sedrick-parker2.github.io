@@ -1,0 +1,107 @@
+// #!/usr/bin/env node
+
+'use strict';
+
+var customers = require('./data/customers.json');
+var _ = require('underbar');
+
+/**
+ * 1. Import your lodown module using the require() method,
+ *    using the string 'lodown-<my-username>', or whatever
+ *    name with which you published your npm lodown project.
+ *
+ * 2. Solve all problems as outlined in the README.
+ *
+ * 3. We started the first one for you as an example! Make the rest in that style.
+ *
+ * 4. To test your work, run the following command in your terminal:
+ *
+ *    npm start --prefix ./sedrick-parker2.github.io/projects/let-s-get-functional
+ *
+ *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
+ */
+
+var maleCount = function (array) {
+    // use _.filter method to return a new array of only male customers
+    return _.filter(array, function (customer) {
+        return customer.gender === 'male';
+    }).length;
+};
+var femaleCount = function (arr) {
+    let ladyCount = 0;
+    let checker = arr.reduce(function (count, currentVal) {
+        //      return count[currentVal] === 'female'? ladyCount++ : ladyCount
+        if (currentVal.gender === 'female') {
+            ladyCount++
+        }
+    }, 0);
+    return ladyCount;
+};
+
+
+var oldestCustomer = function (arr) {
+    let output = [];
+    //  - **Objective**: Find the oldest customer's name
+    for (let i = 0; i < arr.length; i++) {
+        output.push(arr[i].age)
+    }
+    //     have all values so, how could i get the age values ?
+    // use a method to get the highest age, then check to see whos age matches the number
+    let oldHeadAge = Math.max(...output);
+    //   this is going to be the oldest users age now we need to check who
+    for (let s = 0; s < arr.length; s++) {
+        if (arr[s].age === oldHeadAge) {
+            //       if users age matches the age , we are going to return the name of that user
+            return arr[s].name;
+        }
+    }
+    //  - **Output**: `String`
+};
+
+var youngestCustomer = function (arr) {
+    let output = [];
+    //  - **Objective**: Find the oldest customer's name
+    for (let i = 0; i < arr.length; i++) {
+        output.push(arr[i].age)
+        // ### 4: `youngestCustomer`
+        //  - **Objective**: Find the youngest customer's name
+        //  - **Input**: `Array`
+        //  - **Output**: `String`
+        //  - **Constraints**:
+    }
+    let youngster = Math.min(...output);
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j].age === youngster) {
+            //       so if users age is the youngest return the name
+            return arr[j].name;
+        }
+    }
+};
+
+var averageBalance;
+
+var firstLetterCount;
+
+var friendFirstLetterCount;
+
+var friendsCount;
+
+var topThreeTags;
+
+var genderCount;
+
+//////////////////////////////////////////////////////////////////////
+// DON'T REMOVE THIS CODE ////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+// here, export any references you need for tests //
+module.exports.maleCount = maleCount;
+module.exports.femaleCount = femaleCount;
+module.exports.oldestCustomer = oldestCustomer;
+module.exports.youngestCustomer = youngestCustomer;
+module.exports.averageBalance = averageBalance;
+module.exports.firstLetterCount = firstLetterCount;
+module.exports.friendFirstLetterCount = friendFirstLetterCount;
+module.exports.friendsCount = friendsCount;
+module.exports.topThreeTags = topThreeTags;
+module.exports.genderCount = genderCount;

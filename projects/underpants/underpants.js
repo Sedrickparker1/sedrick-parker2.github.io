@@ -371,6 +371,7 @@ _.map = function (collec, func) {
 
 _.pluck = function (arr, prop) {
   return _.map(arr, function (i, index, arr) {
+    // maps thru the arr , then return
     return arr[index][prop];
   })
 }
@@ -487,8 +488,6 @@ _.some = function (coll, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
-
 _.reduce = function (arr, func, seed) {
   var output;
   if (seed === undefined) {
@@ -525,11 +524,13 @@ _.reduce = function (arr, func, seed) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
-_.extend = function (obj1, obj2) {
-  for(let key in obj2){
-   return  Object.assign(obj1, key)
-  }
- 
+_.extend = function (obj, ...props) {
+  // map through to get all values fro ...props arg
+  props.map((prop) => {
+    Object.assign(obj, prop);
+  });
+  // assign those objects to the first arg and then return the first arg
+  return obj;
 }
 /** _.extend
 * Arguments:
