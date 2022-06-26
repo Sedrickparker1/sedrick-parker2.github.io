@@ -75,7 +75,6 @@ var youngestCustomer = function (arr) {
         }
     }
 };
-
 var averageBalance;
 
 var firstLetterCount = function (array, letter) {
@@ -93,7 +92,40 @@ var firstLetterCount = function (array, letter) {
     return count;
 };
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function (array, customer, letter) {
+    let friendNames = [];
+
+    let result = 0;
+    // we are returning this variable
+
+    //  - **Objective**: Find how many friends of a given customer have names that           start with a given letter
+    // we need to get the values before anything..
+
+    for (let i = 0; i < array.length; i++) {
+        // if customer name is true continue the function , else stop
+        if (customer === array[i].name) {
+            // getting the friends stored in a friendnames array..
+            friendNames.push(array[i].friends);
+        }
+
+    } // for loop end||||||||||
+
+    // loop thru the names array to get the names of the friends to test the letter on
+    for (let n = 0; n < friendNames.length; n++) {
+        // this is a 2d array..
+        for (let m = 0; m < friendNames[n].length; m++) {
+            // now we can acces the names inside of the friend
+
+            if (friendNames[n][m].name[0].toUpperCase() === letter.toUpperCase()) {
+         // if friends names first letter is equal to the letter
+                result += 1;
+               
+            }
+        }
+    }
+    return result;
+    //  - **Output**: `Number`
+};
 
 var friendsCount;
 
