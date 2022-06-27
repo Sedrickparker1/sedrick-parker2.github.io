@@ -107,14 +107,13 @@ var friendFirstLetterCount = function (array, customer, letter) {
             // getting the friends stored in a friendnames array..
             friendNames.push(array[i].friends);
         }
-
     } // for loop end||||||||||
 
     // loop thru the names array to get the names of the friends to test the letter on
     for (let n = 0; n < friendNames.length; n++) {
         // this is a 2d array..
         for (let m = 0; m < friendNames[n].length; m++) {
-            // now we can acces the names inside of the friend
+            // now we can acces the names inside of the friend...
 
             if (friendNames[n][m].name[0].toUpperCase() === letter.toUpperCase()) {
          // if friends names first letter is equal to the letter
