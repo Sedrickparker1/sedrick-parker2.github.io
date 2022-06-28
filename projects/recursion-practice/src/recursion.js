@@ -16,7 +16,6 @@ var factorial = function (n) {
   return n * factorial(n - 1);
 };
 
-
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
 var sum = function (array, theSum = 0) {
@@ -56,7 +55,19 @@ var sumBelow = function (n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function (x, y) {
+var range = function (x, y,output = []) {
+    const step = x > y ? -1 : 1; // this determines if your range goes up or down
+    if(x === y) {   
+      // if 2 is equal to nine return the output
+      return [];
+    }
+    if(x === y - step) {
+      // if no intergers return output
+      return [];
+    }
+    // then we recurse to get the recursive loop going
+    return output.concat(x + step, range(x + step, y));
+
 };
 
 // 7. Compute the exponent of a number.
@@ -65,6 +76,8 @@ var range = function (x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function (base, exp) {
+
+  
 };
 
 // 8. Determine if a number is a power of two.
