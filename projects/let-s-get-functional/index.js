@@ -126,7 +126,21 @@ var friendFirstLetterCount = function (array, customer, letter) {
     //  - **Output**: `Number`
 };
 
-var friendsCount;
+var friendsCount = function(array, user){
+    let output = [] ;
+    for (let i = 0; i < array.length ; i++) {
+      // loop thru the array
+     let friendsList = array[i].friends;
+      for (let s = 0; s < friendsList.length ; s++){
+        // loop thru the friends key array
+        if (friendsList[s].name === user){
+          // pushing names that have user as friends
+           output.push(array[i].name)
+        }
+      }
+    }
+   return output;
+};
 
 var topThreeTags;
 
