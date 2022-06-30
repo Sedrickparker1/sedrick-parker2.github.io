@@ -162,6 +162,7 @@ var modulo = function (x, y) {
 var multiply = function (x, y) {
   if (y === 0) {
     return 0;
+    
   }
   if (y > 0) {
     return (x + multiply(x, y - 1));
@@ -248,12 +249,11 @@ var buildList = function (value, length, list = []) {
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function (array, value) {
-  let count = 0
+var countOccurrence = function (array, value, count=0) {
   if (!array.length) {
     return count;
   }
-  return (array[count] === value) + countOccurrence(array.slice(1), value);
+  return (array[count] === value) + countOccurrence(array.slice(1), value, count);
 };
 
 // 20. Write a recursive version of map.
@@ -261,11 +261,10 @@ var countOccurrence = function (array, value) {
 var rMap = (array, callback, arr = []) => {
   // base case
   if (array.length === 1) {
-    arr.push(callback(array[array.length - 1]))
+    arr.push(callback(array[0]))
     // pushing the last value through the callback
     return arr;
   }
-
   arr.push(callback(array[0]));
   // recursion king :}
   return rMap(array.slice(1), callback, arr)
@@ -308,11 +307,7 @@ var replaceKeysInObj = function (obj, key, newKey) {
 // fibonacci(5);  // [0, 1, 1, 2, 3, 5]
 // Note:  The 0 is not counted.
 var fibonacci = function (n) {
-  if (n <= 2) {
-    return n - 1
-    // perfect base case
-  }
-  return fibonacci(n + 1) + fibonacci(n - 2)
+
 };
 
 // 25. Return the Fibonacci number located at index n of the Fibonacci sequence.
@@ -321,6 +316,13 @@ var fibonacci = function (n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function (n) {
+  if (n === 1) {
+    return n;
+   }
+   else if (n < 0) {
+    return null;
+   }
+   return nthFibo(n -1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
@@ -394,8 +396,14 @@ var letterTally = function (str, obj={}) {
 // elements should not be changed.
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
-var compress = function (list) {
-
+var compress = function (list, newList=[]) {
+  if (list.length === 0) {
+    return newList;
+  }
+  if (list.length >= 1 && list[0] !== newList[newList.length -1]) {
+    newList.push(list[0])
+  }
+  return compress(list.slice(1), newList);
   
 };
 
@@ -408,20 +416,84 @@ var augmentElements = function (array, aug) {
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function (array) {
+var minimizeZeroes = function (input, newArr=[]) {
+  if (input.length === 0) {
+    return newArr;
+  }
+  if (input.length >= 1 && input[0] !== newArr[newArr.length -1]) {
+    newArr.push(input[0])
+  }
+  return minimizeZeroes(input.slice(1), newArr);
+  
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function (array) {
+var alternateSign = function (array, newArr=[]) {
+
+if (array.length == 0) {
+  return newArr;
+}
+if (array.length % 2 === 0) {
+  if (array[0] > 0) {
+    newArr.push(array[0])
+  }else{
+    newArr.push(-array[0])
+  }
+}
+if (array.length & 2 !== 0) {
+  if (array[0] > 0) {
+    newArr.push(-array[0])
+  }else{
+    newArr.push(array[0])
+  }
+}
+return alternateSign(array.slice(1), newArr)
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function (str) {
+var numToText = function(str, newStr = '') {
+  if (str.length === 0) {
+    return newStr.replace(/[0-9]/g, '');;
+  }
+  if (str[0] === "0") {
+    newStr += str[0].replace("0", "zero")
+  }
+  if (str[0] === "1") {
+    newStr += str[0].replace("1", "one")
+  }
+  if (str[0] === "2") {
+    newStr += str[0].replace("2", "two")
+  }
+  if (str[0] === "3") {
+    newStr += str[0].replace("3", "three")
+  }
+  if (str[0] === "4") {
+    newStr += str[0].replace("4", "four")
+  }
+  if (str[0] === "5") {
+    newStr += str[0].replace("5", "five")
+  }
+  if (str[0] === "6") {
+    newStr += str[0].replace("6", "six")
+  }
+  if (str[0] === "7") {
+    newStr += str[0].replace("7", "seven")
+  }
+  if (str[0] === "8") {
+    newStr += str[0].replace("8", "eight")
+  }
+  if (str[0] === "9") {
+    newStr += str.replace("9", "nine")
+  }
+  if (typeof str[0] === 'string'){
+    newStr += str[0]
+  }
+  return numToText(str.slice(1), newStr);
 };
 
 // *** EXTRA CREDIT ***

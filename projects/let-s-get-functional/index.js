@@ -142,7 +142,9 @@ var friendsCount = function(array, user){
    return output;
 };
 
-var topThreeTags;
+var topThreeTags = function () {
+    
+} ;
 
 var genderCount;
 

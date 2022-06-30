@@ -66,8 +66,22 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(x, y) {
+  if (typeof x !== 'object' && typeof y !== 'object') {
+    return x === y;
+  }
+  if (typeof x !== 'object' || typeof z !== 'object') {
+    return false
+  }
+  var xkeys = Object.keys(x);
+  var ykeys = Object.keys(y);
 
+  for (let i = 0; i < xkeys.length; i++) {
+    if (!ykeys.includes(xkeys[i]) || !deepEqual(x[xkeys[i]], y[xkeys[i]])) {
+      return false;
+    }
+  }
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
