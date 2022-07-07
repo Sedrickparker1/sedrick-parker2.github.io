@@ -1,10 +1,37 @@
 ////////////////////////////////////////////////////////////////////////////////
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+// expect(range(1, 3)).to.deep.equal([1, 2, 3]);
+function range(num, num2, num3,arr=[]){
+  if (num3 === undefined){
+    if (num === num2){
+      return [];
+    }
+    if (num < num2){
+      while(num <= num2){
+        arr.push(num ++);
+        // if number1 less than number two push that 
+         // number plus one until its equals the number2
+      }
+    }
+     else if (num > num2){
+      while(num >= num2){
+        arr.push(num --)
+      }
+    }
 
-function range() {
-
+  }
+  
+  return arr
 }
+
+
+
+  
+//  it("should create array with contents of integers within given range", function () {
+//   expect(range(1, 3)).to.deep.equal([1, 2, 3]);
+// });
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
@@ -34,16 +61,27 @@ function reverseArrayInPlace() {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
-
+function arrayToList(array) {
+  let rest = null;
+  // iterate backwards through the inout array
+  for (let i = array.length - 1; i >= 0; i-- ){
+    rest = { value : array[i], rest : rest};
+  }
+  return  rest;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(list , arr=[]) {
+  if (list.rest === null){
+    arr.push(list.value)
+    return arr;
+  }
+    // recursion
+    arr.push(list.value);
+    return listToArray(list.rest, arr)
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -168,7 +168,7 @@ var multiply = function (x, y) {
     return (x + multiply(x, y - 1));
   }
   else if (y < 0) {
-    return -multiply(x, -y);
+    return  -multiply(x, -y);
   }
 };
 
@@ -208,7 +208,7 @@ var compareStr = function (str1, str2) {
 // occupies an index of the array.
 var createArray = function (str, arr = []) {
   if (str.length === 1) {
-    arr.push(str[str.length - 1]);
+    arr.push(str);
     return arr;
     // base case !!
   }
@@ -224,7 +224,8 @@ var reverseArr = function (array, result = []) {
     result.push(array[0])
     return result;
   }
-  result.push(array[array.length - 1])
+  result.push(array[array.length - 1]);
+  
   // this is me taking the last value out every time
   array.pop();
   return reverseArr(array, result);

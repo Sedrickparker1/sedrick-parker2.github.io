@@ -146,7 +146,25 @@ var topThreeTags = function () {
     
 } ;
 
-var genderCount;
+var genderCount = function(array){
+ let genderObj = array.reduce(function(obj, person){
+  if (person.gender === 'male'){
+    obj.male += 1;
+  }
+  else if(person.gender === 'female'){
+    obj.female += 1;
+  }
+   else{
+     obj.nonbinary += 1;
+   }
+  
+   // check if the genders match the keys, for loop maybe 
+return obj;
+  
+ },{male:0, female:0,nonbinary:0});
+
+  return genderObj;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
