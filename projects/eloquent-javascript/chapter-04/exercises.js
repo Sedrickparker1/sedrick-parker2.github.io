@@ -2,32 +2,43 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // expect(range(1, 3)).to.deep.equal([1, 2, 3]);
-function range(num, num2, num3,arr=[]){
-  if (num3 === undefined){
-    if (num === num2){
-      return [];
-    }
-    if (num < num2){
-      while(num <= num2){
-        arr.push(num ++);
-        // if number1 less than number two push that 
-         // number plus one until its equals the number2
-      }
-    }
-     else if (num > num2){
-      while(num >= num2){
-        arr.push(num --)
-      }
-    }
 
+function range(num1, num2, num3){
+
+  let returnArray = [];
+  // what will be returned
+
+  if (num3 !== undefined){
+    // checks if the third parameter is present;
+    if (num3 < 0){
+      // if num3 is negative return empty array
+      return returnArray;
+    }
+    else{
+      for (let i = num1; i <= num2; i += num3 ){
+        // using a for loop to update num1 until it us equal to num2..
+          returnArray.push(i)
+        // adding to the returnArray..
+       }
+     }
   }
-  
-  return arr
+  else{
+// the third parameter is not present..
+    if (num1 < num2){
+      for (let i = num1; i <= num2; i ++){
+        // using  a for loop to add one until the value of num2
+        returnArray.push(i);
+      }
+    }
+  }
+  // output 
+  return returnArray;
 }
 
 
 
-  
+
+
 //  it("should create array with contents of integers within given range", function () {
 //   expect(range(1, 3)).to.deep.equal([1, 2, 3]);
 // });
@@ -36,24 +47,44 @@ function range(num, num2, num3,arr=[]){
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function sum() {
-
+function sum(...nums) {
+  for(let i = 0; i < nums.length; i ++){
+    // since we are using a unknown amount or numbers, we need to put them in a array alreay
+    // making it a 2d array, no we have to loop to get to the main array return the result of the numbers
+    // being added together - seddypsuedo
+    let allNumbers = nums[i];
+    return allNumbers.reduce(function(adder, currVal){
+        adder += currVal;
+      //  0 + 10
+        // 10 + 20...
+      return adder;
+    }, 0);
+  }
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
-
+function reverseArray(array, returnArray=[]) {
+  if(array.length === 0){
+    return returnArray;
+  }
+    returnArray.push(...array)
+  return returnArray.reverse()  ;
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
+function reverseArrayInPlace(array, emptyArray=[]) {
+  if (array.length === 0){
+    return emptyArray;
+  }
+  return array.reverse();
 
 }
 
@@ -64,33 +95,33 @@ function reverseArrayInPlace() {
 function arrayToList(array) {
   let rest = null;
   // iterate backwards through the inout array
-  for (let i = array.length - 1; i >= 0; i-- ){
-    rest = { value : array[i], rest : rest};
+  for (let i = array.length - 1; i >= 0; i--) {
+    rest = { value: array[i], rest: rest };
   }
-  return  rest;
+  return rest;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray(list , arr=[]) {
-  if (list.rest === null){
+function listToArray(list, arr = []) {
+  if (list.rest === null) {
     arr.push(list.value)
     return arr;
   }
-    // recursion
-    arr.push(list.value);
-    return listToArray(list.rest, arr)
+  // recursion
+  arr.push(list.value);
+  return listToArray(list.rest, arr)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function prepend() {
-
-}
+function prepend(number, obj){
+  return number.concat(obj)
+    
+  }
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
@@ -108,7 +139,7 @@ function deepEqual(x, y) {
   if (typeof x !== 'object' && typeof y !== 'object') {
     return x === y;
   }
-  if (typeof x !== 'object' || typeof z !== 'object') {
+  if (typeof x !== 'object' || typeof y !== 'object') {
     return false
   }
   var xkeys = Object.keys(x);

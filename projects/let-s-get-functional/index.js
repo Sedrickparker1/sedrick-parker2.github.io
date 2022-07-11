@@ -142,8 +142,34 @@ var friendsCount = function(array, user){
    return output;
 };
 
-var topThreeTags = function () {
+var topThreeTags = function (array, tags=[]) {
+    let allTags = [];
+  
+    let obj = {};
     
+    for (i = 0; i < array.length; i ++){
+      allTags.push(...array[i].tags);
+    }
+  
+    for (i = 0; i < allTags.length; i ++){
+      if (obj[allTags[i]]){
+        obj[allTags[i]] ++
+      }else{
+        obj[allTags[i]] = 1;
+      }
+    }
+    
+    
+    let checker =  Object.entries(obj).sort((a, b) =>{
+      
+      return b[1] - a[1];
+    })
+  
+    
+    tags = [checker[0][0], checker[1][0], checker[2][0]];
+    
+    
+    return tags
 } ;
 
 var genderCount = function(array){
