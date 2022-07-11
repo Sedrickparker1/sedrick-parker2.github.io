@@ -75,7 +75,15 @@ var youngestCustomer = function (arr) {
         }
     }
 };
-var averageBalance;
+var averageBalance = function(array){
+  let moneys = [];
+  for(i = 0; i < array.length; i ++){
+    moneys.push(Number(array[i].balance.replace(/[^0-9\.-]+/g,"")))
+  }
+  return moneys.reduce((count, currVal)=>{
+    return count += currVal;
+  }, 0);
+};
 
 var firstLetterCount = function (array, letter) {
     //  - **Objective**: Find how many friends of a given customer have names that start with a given letter
@@ -164,11 +172,7 @@ var topThreeTags = function (array, tags=[]) {
       
       return b[1] - a[1];
     })
-  
-    
     tags = [checker[0][0], checker[1][0], checker[2][0]];
-    
-    
     return tags
 } ;
 
