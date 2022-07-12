@@ -81,7 +81,7 @@ var averageBalance = function(array){
     moneys.push(Number(array[i].balance.replace(/[^0-9\.-]+/g,"")))
   }
   return moneys.reduce((count, currVal)=>{
-    return count += currVal;
+    return count += currVal  / array.length;
   }, 0);
 };
 
