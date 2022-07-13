@@ -128,11 +128,15 @@ function prepend(number, obj){
 
 function nth(obj, n)
 {
-
-  let vals = Object.keys(obj);
-
-  return vals[n];
+  if (n < 0){
+    return undefined;
+  }
+  if (n === 0){
+    return obj.value
+  }
+  return nth(obj.rest, n -1)
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // deepEqual ///////////////////////////////////////////////////////////////////
