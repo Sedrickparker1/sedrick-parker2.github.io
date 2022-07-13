@@ -11,7 +11,7 @@ describe('Eloquent JavaScript', function () {
 
     describe("triangles()", function () {
       it("should log each level of triangle separately ", function () {
-        triangle(7);
+        triangles(7);
         const triangle = [
           '#',
           '##',
