@@ -77,12 +77,14 @@ var youngestCustomer = function (arr) {
 };
 var averageBalance = function(array){
   let moneys = [];
-  for(i = 0; i < array.length; i ++){
+  for(var i = 0; i < array.length; i++){
     moneys.push(Number(array[i].balance.replace(/[^0-9\.-]+/g,"")))
   }
-  return moneys.reduce((count, currVal)=>{
-    return count += currVal  / array.length;
-  }, 0);
+  let sum = moneys.reduce(function(sum, val){
+    return sum += val;
+  })
+
+  return sum / moneys.length;
 };
 
 var firstLetterCount = function (array, letter) {
@@ -152,14 +154,14 @@ var friendsCount = function(array, user){
 
 var topThreeTags = function (array, tags=[]) {
     let allTags = [];
-  
+
     let obj = {};
     
-    for (i = 0; i < array.length; i ++){
+    for (let i = 0; i < array.length; i++){
       allTags.push(...array[i].tags);
     }
   
-    for (i = 0; i < allTags.length; i ++){
+    for (let i = 0; i < allTags.length; i++){
       if (obj[allTags[i]]){
         obj[allTags[i]] ++
       }else{
@@ -185,13 +187,13 @@ var genderCount = function(array){
     obj.female += 1;
   }
    else{
-     obj.nonbinary += 1;
+     obj['non-binary'] += 1;
    }
   
    // check if the genders match the keys, for loop maybe 
 return obj;
   
- },{male:0, female:0,nonbinary:0});
+ },{male:0, female:0,'non-binary':0});
 
   return genderObj;
 };
