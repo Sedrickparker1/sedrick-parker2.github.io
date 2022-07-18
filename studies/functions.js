@@ -1,18 +1,11 @@
 /**
  * FUNCTIONS : 
- * 
- * 
- * 
- * .functions allow us to keep block of code and use that code to perfrom task 
- * 
- * 
- * . we can the use that code whenever want and how many times you want
- * 
- *  .can be thought of as logical data 
- * 
- * 
- * .the word to delcare a function is the syntax 
- * 'function'
+
+   * .functions allow us to keep block of code and use that code to perfrom task 
+   * . we can the use that code whenever want and how many times you want
+   *  .can be thought of as logical data 
+   * .the word to delcare a function is the syntax 
+   * 'function'
  * 
  * EXAMPLE :=> function sayYes(){console.log('yes')}
  * 
@@ -37,26 +30,14 @@
  * 
  * ////////////////////////////////////////////////
  * 
- * NAMED FUNCTIONS : all functions except anonymous functions..
- * 
- * .Are hoisted to the top of their scope
- * 
- * .Functions can be called before they are defined..
- * 
- * EXAMPLE : function sayYes('sayYes is the name of the function!!');
- * 
- * ////////////////////////////////////////////////////////////////////////////////////
- * 
- * 
  * 
  * ANONOYMOUS FUNCTIONS : 
  * 
     are functions that dont have names that are mostly written by being passed into other functions
  *  
-    EXAMPLE : 
+    Code EX : 
 
     function(){console.log('anonymous')} ||
-
 
     EXAMPLE : this is an example of a function being a first class Objects.
 
@@ -68,18 +49,65 @@
  * ///////////////////////////////////////////////////////////////////////////////////
  * 
  * 
- * FUNCTION EXPRESSiONS : when a anonymous function is assigned to a variable or constant .
+ * Function EXPRESSiONS : when a anonymous function is assigned to a variable or constant .
  *  
- * .when using , you can only cal the function after its been assigned to a variable
+   The function keyword can be used to define a function inside an expression.
+   You can also define functions using the Function constructor and a function declaration.
+ *
+ * let add = function(num1, num2){
+ *    return num1 + num2
+ * }
+ * 
+ * console.log(add(12, 1)) => 13
+ * ///////////////////////////////////
+ * 
+ * Function Decleration : 
+ * 
+ * The function declaration 
+ * (function statement) defines a function with the specified parameters.
+ * 
+ * Code Ex:
+ * 
+ * function add (num1, num2){
+ *    return num1 + num2
+ * }
+ * console.g(add(12, 3)) => 15
  * 
  * 
- * .also an example of a function being a first class Object
- * 
- * EXAMPLE: let add = (a, b) => a + b;
+ * ////////////////////
  * 
  * 
+ * Function Call :
+ * 
+   A function call is an expression containing the function name followed by the function call operator,
+   () . If the function has been defined to receive parameters, 
+   the values that are to be sent into the function are listed inside the parentheses of the function call operator.
+ * Code Ex :
+
+   let result = add(1, 3);
+
+   console.log(result) => 
+   will return the result from the function call
+
+ * /////////////////////////////
+
+   
+ * Named Functions: 
+ * 
+ *    In JavaScript,
+ *  named functions are simply a way of referring to a function that employs the function keyword followed by a name that can be used as a callback to that function.
+ *  Normal functions with a name or identifier are known as named functions
+ * 
+ * Code EX:
+ * 
+ * function doSomething(item){
+ * return item
+ * }
+ * this is a named funcion because it has a keyWord that can be used in a callBac;
  * 
  * 
+
+ *
  *
  * 
  * 

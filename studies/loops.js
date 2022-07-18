@@ -6,13 +6,31 @@
  * .effective at looping over arrays
  * 
  * .can be used to get values backwards as well as forward
- * EXAMPLE (get values backwards)
+
+    for(start; stop; update){//}
+
+    start: defines a counting variable.
+
+    stop: defines a condition that when false will exit the loop.
+
+    update: defines how to increment a counting variable.
  * 
- * for(var  i =  end.length ; i > -1 ; i --){return i} 
+ *  Code Example: 
+ *  get values out of the array ..
  * 
- *  EXAMPLE 
- * syntax : for (let i = 0; i < end.length ; i ++){}
+ * let names = ['sed', 'gigi', 'micheal', 'carleone'];
  * 
+ * for(let i = 0; i < names.lenth; i ++){
+ *  console.log(names[i]); =>
+ *  will log every element in the array starting from the 0 idex.
+ * 'sed', 'gigi', 'micheal'....
+ * }
+ * 
+ * for(let i = names.length -1 ; i >= 0; i --){
+ *  console.log(names[i]); =>
+ *  logs every element but this time it will be backwards
+ * 'carleone ' , 'micheal', 'gigi'...
+ * }
  * 
 //  * ////////////////////////////////////////////////////
  * 
