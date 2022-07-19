@@ -7,11 +7,11 @@ There are eight basic data types in JavaScript.
 
 EX: They are:
 
-String -	represents textual data	'hello',   
+STRING -	represents textual data	'hello',   
 
 EX: "hello world!" etc
 /////////////////////////
-Number	- an integer or a floating-point number	 
+NUMBER	- an integer or a floating-point number	 
 
 EX: 3, 3.234, 3e-2 etc.
 /////////////////////////
@@ -20,41 +20,42 @@ BigInt  - an integer with arbitrary precision
 EX: 900719925124740999n , 1n etc.
 
 /////////////////////////
-Boolean	- Any of two values: true or false	 
+BOOLEAN	- Any of two values: true or false	 
 
 EX: (1 > 3) => false;
 let canVote = true;
 
 /////////////////////////
-undefined - a data type whose variable is not initialized	
+UNDEFINED - a data type whose variable is not initialized	
 
 EX: let a;
 
 /////////////////////////
-null- denotes a null value	 
+NULL - denotes a null value	 
 
 
 EX: let a = null;
 
 /////////////////////////
-Symbol - data type whose instances are unique and immutable  
+SYMBOL - data type whose instances are unique and immutable  
 
 EX:let value = Symbol('hello');
 
 //////////////////////////////////////
-Object	- key-value pairs of collection of data	..
+OBJECT	- key-value pairs of collection of data	..complex data type so can be reassigned..
+
 
 Ex:  const car = {type:"Fiat", model:"500", color:"white"};
 
 //////////////////////////////
-Array - an array is an ordered list of values. 
+ARRAY - an array is an ordered list of values. also a complex data type.
 Each value is called an element specified by an index.
 
 EX: 
 const cars = ["Saab", "Volvo", "BMW"];
 ///////////////////////////////////
 
-Infinity :
+INFINITY :
 
 The global property Infinity is a numeric value representing infinity.
 
@@ -75,12 +76,22 @@ if (maxNumber === Infinity) {
 // console.log(Math.log(0)       ); /* -Infinity */
 // console.log(1 / Infinity      ); /* 0 */
 // console.log(1 / 0             ); /* Infinity */
-
-
 /*
-Negative Infinity
+NEGATIVE INFINITY : The negative infinity in JavaScript is a constant value which is used to represent a value which is the lowest available. 
+This means that no other number is lesser than this value.
+ It can be generated using a self-made function or by an arithmetic operation.
 
 
+ Code Ex:
+
+ function checkNegativeInfinity(x) {
+        if (x === Number.NEGATIVE_INFINITY) {
+            return 'Number is -Infinity';
+        } else {
+            return 'Number is not -Infinity';
+        }
+    }
+console.log(checkNegativeInfinity(2)) => Number is not -Infinity; 
 */
 
 
